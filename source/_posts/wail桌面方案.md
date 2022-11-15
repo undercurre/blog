@@ -19,3 +19,9 @@ tags:
 wails init -n myproject -t vue-ts
 ```
 
+## 调试
+调试前要下载好前端依赖，建议使用淘宝源和pnpm比较快
+```
+wails dev
+```
+
