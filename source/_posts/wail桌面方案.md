@@ -14,6 +14,8 @@ tags:
 
 ## 建立项目
 肯定选我们最喜欢的vue-ts来跨端
+**这里有个坑，你一定要在系统变量里添加%USERPROFILE%\go\bin**
 ```
 wails init -n myproject -t vue-ts
 ```
+
