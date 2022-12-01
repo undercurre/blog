@@ -5,6 +5,15 @@ tags:
 ---
 
 # goFrame
+## 安装
+```
+git clone https://github.com/gogf/gf && cd gf/cmd/gf && go install
+```
+
+## init项目
+```
+gf init my-project -u
+```
 
 ## 程序启动
 所有的程序入口都是由main.go进入，该文件主要是调用internal/cmd包的对应命令引导程序启动。
