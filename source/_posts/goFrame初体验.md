@@ -19,7 +19,7 @@ gf init my-project -u
 所有的程序入口都是由main.go进入，该文件主要是调用internal/cmd包的对应命令引导程序启动。
 
 ```
-// main.go
+// main.go 
 func main() {
 	cmd.Main.Run(gctx.New())
 }
@@ -130,10 +130,9 @@ _ "github.com/gogf/gf-demo-user/v2/internal/logic"
 
 // 连接数据库
 
-在main.go中引入以下驱动文件(mysql的)、
+在main.go中引入以下驱动文件(mysql的)
 
 _ "github.com/gogf/gf/contrib/drivers/mysql/v2"
-
 
 mainifest/config/config.yaml中配置数据库的信息
 
@@ -147,5 +146,7 @@ database:
     link:   "mysql:root:12345678@tcp(127.0.0.1:3306)/test"
     debug:  true
 
-调用make dao命令后自动生成dao、do、entity代码,也就是自动实现了数据模型
+调用gf gen dao命令后自动生成dao、do、entity代码,也就是自动实现了数据模型
+
+使用这个命令前需要先go install github.com/gogf/gf-cli/v2/gf@master下载go-cli 
 ```
