@@ -34,5 +34,37 @@ tags:
 
 先写node脚本确保核心代码能顺利处理文本
 
-## 第一步——node准备
+### 第一步——node准备
+
 首先你要知道commonjs和module,这个东西对应了package.json中的type属性，默认是commonjs，除了type可以指定模块化规范外，通过文件的后缀来指定文件所遵循的模块化规范，以.mjs结尾的文件就是使用的ESModule规范，以.cjs结尾的遵循的是commonjs规范。
+
+```
+新建个文件夹，文件夹名为项目名
+然后进去pnpm init新建一个项目
+```
+
+### 新时代肯定要用ts
+
+需要注意以下几点：
+
+1. pnpm i --save @types/node
+2. 引入第三方库： npm i --save 第三方库名 npm i --save @types/第三方库名
+3. tsc --init 初始化tsconfig.json
+4. ts-node可以直接运行ts代码,pnpm i ts-node
+
+### 进入正题
+
+1. 安装库
+```
+pnpm install xlsx
+```
+2. 读取excel文件
+
+
+### 增值功能——输出图形
+
+### 增值功能——输出ppt
+
+### 服务器加速
+
+### 浏览器本地保密
