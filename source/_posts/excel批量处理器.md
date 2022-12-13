@@ -58,8 +58,45 @@ tags:
 ```
 pnpm install xlsx
 ```
+```
+var XLSX = require('xlsx');
+```
 2. 读取excel文件
+```
+var workbook = XLSX.readFile('./lib/study.xlsx');
 
+var sheets = workbook.Sheets;
+
+var sheetNames = workbook.SheetNames;
+```
+3. 写入excel文件
+```
+var newBook = XLSX.utils.book_new();
+
+// 遍历表
+sheetNames.forEach((element: string) => {
+    // 取得表数据
+    var aoa = XLSX.utils.sheet_to_json(sheets[element], {header: 1});
+    // 处理表中的日期时间数据
+    aoa.forEach((item: any, index: Number) => {
+        if (index === 0) return
+        item[1] = XLSX.SSF.parse_date_code(item[1]);
+        item[1] = `${item[1].y}/${item[1].m}/${item[1].d}`;
+    });
+    // 制作新表
+    var newSheet = XLSX.utils.aoa_to_sheet(aoa);
+    // 插入新表
+    XLSX.utils.book_append_sheet(newBook, newSheet, `翻译后${element}`);
+    // 导出文件
+    XLSX.writeFile(newBook, './dist/hihi.xlsx');
+});
+```
+4、处理数据
+Dates 默认存储为数字，使用XLSX.SSF.parse_date_code进行转换
+```
+item[1] = XLSX.SSF.parse_date_code(item[1]);
+item[1] = `${item[1].y}/${item[1].m}/${item[1].d}`;
+```
 
 ### 增值功能——输出图形
 
