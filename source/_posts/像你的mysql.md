@@ -1,0 +1,15 @@
+---
+title: 像你的mysql
+date: 2022-12-14 19:51:06
+tags:
+---
+
+# User表
+```sql
+CREATE TABLE users (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    username VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL
+);
+```
