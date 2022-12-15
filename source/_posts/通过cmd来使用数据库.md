@@ -18,3 +18,4 @@ tags:
 9. 通过create table user命令建表
 10. describe <tablename\> 用于查表
 11. select * from <tablename\> 查表
+12. drop table table_name 删除表
